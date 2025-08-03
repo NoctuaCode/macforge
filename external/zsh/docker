@@ -1,0 +1,4 @@
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/noctuapps/.docker/completions $fpath)
+
+export DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
