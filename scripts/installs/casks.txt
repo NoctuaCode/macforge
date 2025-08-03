@@ -1,0 +1,13 @@
+aerospace
+cursor
+dbeaver-community
+font-caskaydia-cove-nerd-font
+font-geist-mono-nerd-font
+ghostty
+google-chrome@dev
+hoppscotch
+karabiner-elements
+obsidian
+raycast
+warp
+zed
