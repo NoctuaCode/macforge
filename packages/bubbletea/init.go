@@ -2,6 +2,7 @@ package bubbltea
 
 import (
 	"fmt"
+	"log"
 
 	tea "github.com/charmbracelet/bubbletea"
 )
@@ -34,16 +35,14 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.cursor--
 			}
 		case "down", "j":
-			if m.cursor > len(m.choices)-1 {
+			if m.cursor < len(m.choices)-1 {
 				m.cursor++
 			}
 		case "enter", " ":
-			_, ok := m.selected[m.cursor]
-			if ok {
-				delete(m.selected, m.cursor)
-			} else {
-				m.selected[m.cursor] = struct{}{}
-			}
+			// TODO: Update to scripts
+			return m, tea.Quit
+		default:
+			log.Printf("%s", msg.String())
 		}
 	}
 	return m, nil
@@ -61,7 +60,7 @@ func (m model) View() string {
 		if _, ok := m.selected[i]; ok {
 			checked = "x"
 		}
-		s += fmt.Sprintf("%s [%s] %s\n", cursor, checked, choice)
+		s += fmt.Sprintf("\n%s [%s] %s\n", cursor, checked, choice)
 	}
 
 	s += "\nPress q to quit.\n"
