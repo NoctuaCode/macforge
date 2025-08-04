@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	tea "github.com/NoctuaCode/macforge/packages/bubbletea"
+	tea "github.com/NoctuaCode/macforge/packages"
 )
 
 func main() {

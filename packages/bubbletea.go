@@ -1,4 +1,5 @@
-package bubbltea
+// Package packages
+package packages
 
 import (
 	"fmt"
